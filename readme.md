@@ -1,13 +1,13 @@
 <h1>vuejs 2 目录</h1>
 <ol>
     <li>
-        <a href='https://github.com/YonyLady/vueJs/blob/master/1-htmlTag.html'>基本用法</a>
+        <a href='https://github.com/YonyLady/vueJs/blob/master/1-html'>基本用法</a>
     </li>
     <li>
-        <a href='https://github.com/YonyLady/vueJs/blob/master/2-if-else.html'>条件渲染 v-if</a>
+        <a href='https://github.com/YonyLady/vueJs/blob/master/2-if'>条件渲染 v-if</a>
     </li>
     <li>
-        <a href='https://github.com/YonyLady/vueJs/blob/master/3-for.html'>列表渲染 v-for</a>
+        <a href='https://github.com/YonyLady/vueJs/blob/master/3-for'>列表渲染 v-for</a>
     </li>
     <li>
         <a href='https://github.com/YonyLady/vueJs/tree/master/4-v-on'>事件处理 v-on</a>
@@ -28,7 +28,7 @@
         <a href='https://github.com/YonyLady/vueJs/tree/master/9-computed'>计算属性 computed</a>
     </li>
     <li>
-        <a href='https://github.com/YonyLady/vueJs/blob/master/10-watcher.html'>观察 watchers</a>
+        <a href='https://github.com/YonyLady/vueJs/blob/master/10-watcher'>观察 watchers</a>
     </li>
 </ol>
 
