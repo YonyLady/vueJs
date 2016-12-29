@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-on修饰符用法 </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app">
+        <!--按键修饰符keyup-->
+        <input v-on:keyup.13="save" placeholder="输入完按回车键保存">
+        <hr class="mb">
+        <input v-on:keyup.enter="save" placeholder="输入完按回车键保存">
+        <hr class="mb">
+        <!--keyup.13、 keyup.enter 都代表enter键 -->
+        <!--http://cn.vuejs.org/v2/guide/events.html#按键修饰符参考页面-->
+
+        <!-- 单击事件只执行一次 -->
+        <button v-on:click.once="doThis">do once</button>
+
+
+    </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               msg: ''
+           },
+           methods: {
+               save: function () {
+                  alert("keyup save");
+               },
+               doThis: function () {
+                   alert("just do it once!");
+               }
+           }
+       });
+    </script>
+</body>
+</html>

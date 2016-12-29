@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>component of data的用法  </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app">
+        <section class="mb">
+            <header class="title">component 组件 data的用法</header>
+            <p class="note">组件中data 必须是函数</p>
+            <button is="counter-test"></button>
+            <button is="counter-test"></button>
+            <button is="counter-test"></button>
+        </section>
+    </div>
+
+    <script>
+        var data = { counter: 0 };
+        var count = {counter: 0};
+        Vue.component('counter-test',{
+            template:'<button @click="counter += 1">{{counter}}</button>',
+            data:function () {
+//                return data; //我们为每一个组件返回同一个对象引用
+                return {
+                    counter:0 //通过为每个组件返回新的 data 对象
+                };
+            }
+
+        });
+
+       new Vue({
+           el:"#app",
+           data:{
+               msg: ''
+           }
+       });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单控件 checkbox 用法</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+<div id="app">
+    <section class="mb">
+        <header>单个勾选框，逻辑值为boolen类型</header>
+        <input type="checkbox" v-model="checkbox">
+        <p>你的选项为： {{checkbox}}</p>
+    </section>
+
+    <section class="mb">
+        <header>多个勾选框，绑定到同一个数组, 值为选择的value值</header>
+        <input type="checkbox" id="apple" value="apple" v-model="checked">
+        <label for="apple">apple</label>
+        <input type="checkbox" id="banana" value="banana" v-model="checked">
+        <label for="banana">banana</label>
+        <input type="checkbox" id="yellow" value="yellow" v-model="checked">
+        <label for="yellow">yellow</label>
+        <p>你的选项为： {{checked}}</p>
+    </section>
+
+</div>
+
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            checkbox:'',
+            checked:[]
+        }
+    });
+</script>
+</body>
+</html>

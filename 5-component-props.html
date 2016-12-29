@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>component of props 的用法 </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app">
+        <h5 class="title">字段props的用法</h5>
+        <my-component :my-message="parentMsg"></my-component>
+        <p class="note">当使用非字符串模版时，prop的名字形式会从 camelCase 转为 kebab-case（短横线隔开）</p>
+    </div>
+
+    <script>
+        Vue.component('my-component',{
+            props:['myMessage'],
+            template:'<span>{{ myMessage }}</span>'
+        });
+        new Vue({
+            el:'#app',
+            data:{
+                parentMsg: 'this is parentMsg component!'
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>

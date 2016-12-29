@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>component模板组件的用法 </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="comp">
+        <h5 class="title">组件的基本用法</h5>
+        <first-component></first-component>
+    </div>
+
+    <script>
+        Vue.component('first-component',{
+            template:'<span>this is first component</span>'
+        });
+
+        new Vue({
+            el:'#comp',
+            data:{
+                message: '<p>this is a component!</p>',
+                parentMsg: 'this is parentMsg component!'
+            }
+    //        components:{   //局部注册组件
+    //            'my-component': {
+    //                template:'<div>A custom component! {{counter}}</div>',
+    //                data: function () {
+    //                    return data;
+    //                }
+    //            }
+    //        }
+        });
+
+
+
+    </script>
+</body>
+</html>

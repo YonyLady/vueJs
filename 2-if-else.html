@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-if v-else v-else-if的用法 </title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-if="ok">Yes</h1>
+        <h1 v-else>No</h1>
+        <!--OK为true时， 会显示Yes,不会显示No-->
+        <p v-if="type === 'A'"> A </p>
+        <p v-else-if="type === 'B'"> B </p>
+        <p v-else-if="type === 'C'"> C </p>
+        <p v-else> Not A/B/C </p>
+    </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               ok: true,
+               type: 'C'
+           }
+       });
+    </script>
+</body>
+</html>

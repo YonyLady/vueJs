@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单控件 select 用法</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+<div id="app">
+    <section class="mb">
+        <header> 下拉选框的绑定值为option 的value</header>
+        <select v-model="selected">
+            <option v-for="option in options" :value="option.value">{{option.text}}</option>
+        </select>
+        <p>你的选择是：{{selected}}</p>
+    </section>
+</div>
+
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            selected:'b',
+            options:[
+                { text: 'One', value: 'A' },
+                { text: 'Two', value: 'B' },
+                { text: 'Three', value: 'C' }
+            ]
+
+        }
+    });
+</script>
+</body>
+</html>

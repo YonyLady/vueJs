@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-on 事件绑定 </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 完整语法 -->
+        <button v-on:click="doSomething">点击事件</button>
+        <hr class="mb">
+
+        <!-- 缩写 -->
+        <button @click="doSomething">点击事件</button>
+        <hr class="mb">
+
+        <!--内链处理方法-->
+        <button v-on:click="say('hi')"> say hi</button>
+        <button v-on:click="say('what')">say what</button>
+        <hr class="mb">
+
+        <button v-on:click="say('this is event',$event)">say event</button>
+        <hr class="mb">
+
+
+    </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               msg: ''
+           },
+           methods:{
+               doSomething: function () {
+                   alert("hello vue.js!");
+               },
+               say: function (message,event) {
+                   if(event) event.preventDefault(); //阻止元素发生默认的行为
+                   alert(message);
+                   alert(event.target.tagName);
+               }
+           }
+
+       });
+    </script>
+</body>
+</html>

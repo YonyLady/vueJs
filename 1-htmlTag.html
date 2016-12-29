@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>html常用操作</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+        <br>
+
+        {{ number + 1 }}
+        <br>
+        <!--{{ ok ? 'YES' : 'NO' }}-->
+        {{ message.split('').reverse().join('') }}
+        <br>
+
+        <input v-model="message">
+        <!--messages 需要在data中设值-->
+        <br>
+
+        <p>{{ message }}</p>
+
+        <!--message值为纯文本-->
+        <p v-text="message"></p>
+
+        <!--message值为纯文本-->
+        <p v-html="htmls"></p>
+
+
+
+
+
+
+    </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               message: "hello vue.js",
+               number: 0,
+               htmls: 'this is html <button>submit</button>'
+           }
+       });
+    </script>
+</body>
+</html>
