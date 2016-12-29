@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>filter </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app">
+        <header>filter的基本用法</header>
+        <p class="note">Vue 2.x 中，过滤器只能在 mustache 绑定和 v-bind 表达式（从 2.1.0 开始支持）中使用</p>
+        <div> {{ message | captitalize }} </div>
+    </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               message: 'i love vue.js!'
+           },
+           filters:{
+               captitalize: function (value) {
+                   return value.charAt(0).toUpperCase() + value.slice(1);
+               }
+           }
+       });
+    </script>
+</body>
+</html>

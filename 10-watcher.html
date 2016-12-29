@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>watcher </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app">
+        <header class="title">观察 watchers的用法</header>
+        <p class="note">通过 watch 选项，来响应数据的变化。当你想要在数据变化响应时，执行异步操作或开销较大的操作，</p>
+        <button @click=" firstName = 'Frame' " >修改姓</button>
+        <button @click=" lastName = 'Alice' " >修改名</button>
+        {{ fullName }}
+
+    </div>
+
+    <script>
+       var vm = new Vue({
+           el:"#app",
+           data:{
+               firstName: 'Yony',
+               lastName :'Smath',
+               fullName:'Yony Smath'
+           },
+           watch:{  //观察数据，如果变化，调用以下方法
+               firstName: function (val) {
+                   this.fullName = val + ' ' + this.lastName;
+               },
+               lastName : function (val) {
+                   this.fullName = this.firstName + ' ' + val;
+               }
+           }
+       });
+
+            /**可以再外部调用**/
+//        vm.$watch('firstName',function (val) {
+//            this.fullName = val + ' ' + this.lastName;
+//        })
+    </script>
+</body>
+</html>

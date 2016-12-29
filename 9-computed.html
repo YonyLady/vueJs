@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>computed of base </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app">
+        <header> 计算属性：computed 的基本用法</header>
+        <p class="note"></p>
+        <p> {{ message }} </p>
+        <p> {{ reverseMessage }} </p>
+    </div>
+
+    <script>
+       var vm = new Vue({
+           el:"#app",
+           data:{
+               message: 'this is a message!'
+           },
+           computed:{
+               reverseMessage: function () {
+                   return this.message.split('').reverse().join('');
+               }
+           }
+       });
+    </script>
+</body>
+</html>

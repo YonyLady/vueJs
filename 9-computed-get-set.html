@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>computed of get and set </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app">
+        <header>计算属性： computed 的 getter  setter 用法</header>
+        <p class="note"></p>
+        <p> {{ fullName }} </p>
+    </div>
+
+    <script>
+       var vm = new Vue({
+           el:"#app",
+           data:{
+               firstName: 'Yony',
+               lastName : 'Smath'
+           },
+           computed:{
+               fullName:{
+                   //计算属性默认值只有getter
+                   get: function () {
+                       return this.firstName + ' ' + this.lastName
+                   },
+                   //当调用vm.fullName = '****'时，setter会被调用，vm.firstName 和vm.lastName 也会有相应更新。
+                   set: function (newName) {
+                       var names = newName.split('');
+                       this.firstName = names[0];
+                       this.lastName = names[names.length -1];
+                   }
+               }
+           }
+       });
+    </script>
+</body>
+</html>

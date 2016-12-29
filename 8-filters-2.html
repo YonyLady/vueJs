@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>filter </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app">
+        <header>过滤器 filter 可以多个串联,并添加参数 </header>
+        <p class="note">多个串联基本写法 {{ message | filterA | filterB }}</p>
+        <p class="note">添加参数基本写法 {{ message | filterA('arg1', arg2) }}</p>
+        <div> {{ message | captitalize | add('start','end') }} </div>
+    </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               message: 'i love vue.js!'
+           },
+           filters:{
+               captitalize: function (value) {
+                   return value.charAt(0).toUpperCase() + value.slice(1);
+               },
+               add: function (value,begin,end) {
+                   return begin + " " + value + " " + end;
+               }
+
+           }
+       });
+    </script>
+</body>
+</html>
