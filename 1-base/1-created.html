@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Instance_Lifecycle 实例生命周期</title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+<script>
+    var vm = new Vue({
+        data: {
+            a: 1
+        },
+        created: function() {
+            // `this` points to the vm instance
+            document.write('a is: ' + this.a);
+        }
+    });
+    // -> "a is: 1"
+</script>
+</body>
+</html>
