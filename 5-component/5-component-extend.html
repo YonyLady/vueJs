@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>构造器注册组件</title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app">
+        <my-component></my-component>
+    </div>
+
+    <script>
+        /**创建模板实例**/
+        var myComponent = Vue.extend({
+            template: '<div>{{ message }}</div>',
+            data: function () {
+                return {
+                    message: 'hello vue.js!'
+                }
+            }
+        });
+
+        /**全局注册模板**/
+        Vue.component('my-component',myComponent);
+
+       new Vue({
+           el:"#app"
+       });
+    </script>
+</body>
+</html>
