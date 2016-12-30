@@ -22,11 +22,14 @@
             }
         });
 
-        /**全局注册模板**/
+        /**1、全局注册模板**/
         Vue.component('my-component',myComponent);
 
        new Vue({
            el:"#app"
+//           components:{ //2、局部注册
+//               'my-component' : myComponent
+//           }
        });
     </script>
 </body>
