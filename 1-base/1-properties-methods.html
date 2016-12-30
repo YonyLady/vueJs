@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>属性和方法 </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+        <br>
+        <button @click="message = 'this is a new value'">chang message</button>
+    </div>
+
+    <script>
+        var data ={
+            message:'hello vue.js'
+        };
+       var vm = new Vue({
+           el:"#app",
+           data: data
+       });
+        //vm.$data === data;  ->true
+        // vm.$el === document.getElementById('app') // -> true
+
+        // $watch 是一个实例方法，监视着 vue data 的变化，一有变化，都会启动
+        vm.$watch('message',function (newVal,oldVal) {
+            alert('the message changed! ');
+        })
+    </script>
+</body>
+</html>
