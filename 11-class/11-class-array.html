@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-bind:class绑定数组 </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+    <style>
+        .active{
+            border: 2px solid palevioletred;
+            background: #639799;
+            padding: 50px;
+        }
+        .text-danger{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-bind:class="[activeClass, errorClass]">
+        v-bind:class绑定数组
+    </div>
+
+    <br>
+
+    <div id="app2" v-bind:class="[{active : isActive}, errorClass]">
+    <!--<div id="app2" v-bind:class="[activeClass, errorClass]">-->
+        v-bind:class绑定数组 三元表达式<br>
+        此例始终添加 errorClass ，但是只有在 isActive 是 true 时添加 activeClass 。
+    </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               activeClass: 'active',
+               errorClass: 'text-danger'
+           }
+       });
+       new Vue({
+           el:"#app2",
+           data:{
+               isActive: false,
+               activeClass: 'active',
+               errorClass: 'text-danger'
+           }
+       });
+    </script>
+</body>
+</html>

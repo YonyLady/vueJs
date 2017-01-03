@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-bind:class绑定数据对象 </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+    <style>
+        .active{
+            border: 2px solid palevioletred;
+            background: #639799;
+            padding: 50px;
+        }
+        .text-danger{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-bind:class="classObject">
+        v-bind:class绑定数据对象
+    </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               classObject:{
+                   active: true,
+                   'text-danger': false
+               }
+           }
+       });
+    </script>
+</body>
+</html>

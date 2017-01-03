@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-bind:class组件的用法</title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+    <style>
+        .active{
+            border: 2px solid palevioletred;
+            background: #639799;
+            padding: 50px;
+        }
+        .text-danger{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        v-bind:class组件的用法
+        <my-component :class="{ active : isActive }"></my-component>
+        <!--解析后的结果为：<p class="text-danger active">this is my test</p>-->
+    </div>
+
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               isActive: true
+           },
+           components:{
+               'my-component':{
+                   template:'<p class="text-danger">this is my test</p>'
+               }
+           }
+       });
+    </script>
+</body>
+</html>
