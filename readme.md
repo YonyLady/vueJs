@@ -1,7 +1,7 @@
 <h1>vuejs 2 目录</h1>
 <ol>
     <li>
-        <a href='https://github.com/YonyLady/vueJs/blob/master/1-html'>基本用法</a>
+        <a href='https://github.com/YonyLady/vueJs/blob/master/1-html'>基本用法、构造器、属性、生命周期</a>
     </li>
     <li>
         <a href='https://github.com/YonyLady/vueJs/blob/master/2-if'>条件渲染 v-if</a>
