@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-show用法 </title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+    <header>
+        <h2 class="title">v-show用法</h2>
+        <p class="note">ok为true时显示，为false时不显示( style="display: none;"),但解析的标签任然存在，</p>
+        <p class="note">v-show 和 v-if的区别在于：值为false时，v-if标签不解析，v-show标签会被解析并隐藏</p>
+    </header>
+
+    <div id="app">
+        <p v-if="ok">v-if用法，当ok为false时，不解析标签</p>
+        <p v-show="ok">v-show用法,当ok为false时，会解析标签并隐藏</p>
+        <my-component v-show="isShow"></my-component>
+
+    </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               ok: true,
+               isShow: true
+           },
+           components:{
+               'my-component':{
+                   template:'<span>v-show 组件的用法</span>'
+               }
+           }
+       });
+    </script>
+</body>
+</html>
