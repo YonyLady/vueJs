@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-bind:class用法 </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div id="app" v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' ,'background-color':bgcolor}">
+        v-bind:class用法
+    </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               activeColor: '#fff',
+               fontSize: 32,
+               bgcolor: '#000'
+           }
+       });
+    </script>
+</body>
+</html>
