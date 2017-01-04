@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <title>v-if v-else v-else-if 条件渲染</title>
+    <title>v-else-if 条件渲染</title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
 </head>
 <body>
+    <header>
+        <h2 class="title">v-else-if 多重条件</h2>
+        <p class="note"></p>
+    </header>
     <div id="app">
-        <h1 v-if="ok">Yes</h1>
-        <h1 v-else>No</h1>
-        <!--OK为true时， 会显示Yes,不会显示No-->
         <p v-if="type === 'A'"> A </p>
         <p v-else-if="type === 'B'"> B </p>
         <p v-else-if="type === 'C'"> C </p>
@@ -20,8 +22,7 @@
        new Vue({
            el:"#app",
            data:{
-               ok: true,
-               type: 'C'
+               type: 'A'
            }
        });
     </script>
