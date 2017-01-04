@@ -17,13 +17,16 @@
     </style>
 </head>
 <body>
-    <div id="app" v-bind:class="[activeClass, errorClass]">
-        v-bind:class绑定数组
+    <div id="app" v-bind:class="[{active : isActive}, errorClass]">
+        v-bind:class绑定数组 三元表达式<br>
+        此例始终添加 errorClass ，但是只有在 isActive 是 true 时添加 activeClass 。
     </div>
+
     <script>
        new Vue({
            el:"#app",
            data:{
+               isActive: true,
                activeClass: 'active',
                errorClass: 'text-danger'
            }
