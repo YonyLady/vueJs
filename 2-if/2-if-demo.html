@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-if v-else 基本用法</title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+    <header>
+        <h2 class="title">v-if v-else 基本用法</h2>
+        <p class="note">当Ok为true是，显示标签，false时不显示</p>
+        <p class="note">v-else元素必须紧跟在v-if 或v-show元素后面，否则不被识别</p>
+    </header>
+
+    <div id="app">
+        <h1 v-if="ok">Yes</h1>
+        <h1 v-else>No</h1>
+    </div>
+
+    <script>
+       new Vue({
+           el:"#app",
+           data:{
+               ok: true
+           }
+       });
+    </script>
+</body>
+</html>
