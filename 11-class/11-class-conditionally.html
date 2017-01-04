@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>class 三元表达式用法 </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+    <style>
+        .class-a {
+            color: #FF0000;
+        }
+        .class-b {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-bind:class="[classA, isB ? classB : '']">v-bind:class 三元表达式用法</div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                classA: 'class-a',
+                classB: 'class-b',
+                isB:false
+            }
+        });
+    </script>
+</body>
+</html>
