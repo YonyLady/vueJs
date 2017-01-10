@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-for 对象渲染</title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+    <header>
+        <h2 class="title">v-for 对象渲染</h2>
+        <p class="note"></p>
+    </header>
+
+    <ul id="app">
+        <li v-for="info in person"> {{ info }} </li>
+    </ul>
+
+    <script>
+       new Vue({
+           el: '#app',
+           data: {
+               person:{
+                   firstName: 'Yony',
+                   lastName: 'Smath',
+                   age: 18
+               }
+           }
+       });
+    </script>
+</body>
+</html>
