@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-for 观察数组的变异方法</title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+    <header>
+        <h2 class="title">v-for 观察数组的变异方法</h2>
+        <p class="note">数据变化能触发视图更新</p>
+        <ul>
+            <li>
+                <strong>push()</strong>
+                向数组的末尾添加一个或更多元素，并返回新的长度。
+                example1.items.push({msg:'test'})
+            </li>
+            <li>
+                <strong>pop()</strong>
+                用于删除并返回数组的最后一个元素。
+                example1.items.pop()
+            </li>
+            <li>
+                <strong>shift()</strong>
+                删除并返回数组的第一个元素
+                example1.items.shift()
+            </li>
+            <li>
+                <strong>unshift()</strong>
+                向数组的开头添加一个或更多元素，并返回新的长度。
+                example1.items.unshift({msg:'test'})
+            </li>
+            <li>
+                <strong>splice()</strong>
+                从某个已有的数组返回选定的元素
+                example1.items.splice()
+            </li>
+            <li>
+                <strong>sort()</strong>
+                对数组的元素进行排序
+                example1.items.sort()
+            </li>
+            <li>
+                <strong>reverse</strong>
+                颠倒数组中元素的顺序。
+                example1.items.reverse()
+            </li>
+        </ul>
+
+    </header>
+
+
+<div id="app">
+    <ul>
+        <li v-for="item in items"> {{ item.message }} </li>
+    </ul>
+
+    <button @click="addMsg">push 追加一个元素</button>
+    <button @click="removeMsg">pop 删除最后一个元素</button>
+    <button @click="shiftMsg">shift 删除第一个元素</button>
+    <button @click="unshiftMsg">unshift 在开头添加一个元素</button>
+    <button @click="spliceMsg">splice 删除第二个元素</button>
+    <button @click="sortMsg">sort 排序</button><!--未实现-->
+    <button @click="reverseMsg">reverse 方向排序</button>
+
+</div>
+
+
+    <script>
+       var vm = new Vue({
+           el: '#app',
+           data: {
+               items:[
+                   {message: 'Yony'},
+                   {message: 'Tom'},
+                   {message: 'Lily'},
+                   {message: 'Alice'}
+               ]
+           },
+           methods:{
+               addMsg: function () {
+                   this.items.push({message: 'Smith'});
+               },
+               removeMsg: function () {
+                   this.items.pop();
+               },
+               shiftMsg: function () {
+                   this.items.shift();
+               },
+               unshiftMsg: function () {
+                   this.items.unshift({message:'Frank'});
+               },
+               spliceMsg: function () {
+                   this.items.splice(1,1); //第一个参数为删除项目的索引，第二个参数为删除项目的个数
+               },
+               sortMsg: function () {
+                   this.items.sort();
+               },
+               reverseMsg: function () {
+                   this.items.reverse();
+               }
+           }
+       });
+    </script>
+</body>
+</html>
