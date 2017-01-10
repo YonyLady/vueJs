@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-for 对象渲染 index key value</title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+    <header>
+        <h2 class="title">v-for 对象渲染 index key value</h2>
+        <p class="note"></p>
+    </header>
+
+    <ul id="app">
+        <li v-for="(value,key,index) in person">
+            {{ key }} :
+            {{ value }}
+            {{ index }}
+        </li>
+    </ul>
+
+
+    <script>
+       new Vue({
+           el: '#app',
+           data: {
+               person:{
+                   firstName: 'Yony',
+                   lastName: 'Smath',
+                   age: 18
+               }
+           }
+       });
+    </script>
+</body>
+</html>
