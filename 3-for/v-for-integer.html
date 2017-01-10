@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>v-for 整数迭代</title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+    <header>
+        <h2 class="title">v-for 整数迭代</h2>
+        <p class="note"></p>
+    </header>
+
+    <ul id="app">
+        <li v-for="n in 10"> {{ n }}</li>
+    </ul>
+
+    <script>
+       new Vue({
+           el: '#app'
+       });
+    </script>
+</body>
+</html>
