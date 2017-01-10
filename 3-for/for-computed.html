@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>for 过滤 计算属性 </title>
+    <link type="text/css" rel="stylesheet" href="base.css">
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="number in eventNumbers">{{ number }}</li>
+    </ul>
+
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            numbers:[1,2,3,4,5,6,7,8,9,10]
+        },
+        computed:{
+            eventNumbers: function () {
+                return this.numbers.filter(function (number) {
+                    return number % 2 ===0;
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>
