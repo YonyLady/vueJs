@@ -9,13 +9,13 @@
 <body>
 <div id="app">
     <section class="mb">
-        <header>单个勾选框，逻辑值为boolen类型</header>
+        <header class="title">单个勾选框，逻辑值为boolen类型</header>
         <input type="checkbox" v-model="checkbox">
         <p>你的选项为： {{checkbox}}</p>
     </section>
 
     <section class="mb">
-        <header>多个勾选框，绑定到同一个数组, 值为选择的value值</header>
+        <header class="title">多个勾选框，绑定到同一个数组, 值为选择的value值</header>
         <input type="checkbox" id="apple" value="apple" v-model="checked">
         <label for="apple">apple</label>
         <input type="checkbox" id="banana" value="banana" v-model="checked">
