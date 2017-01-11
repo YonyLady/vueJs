@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>select options 绑定value为对象 </title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+    <header>
+        <h2 class="title">select options 绑定value为对象</h2>
+    </header>
+    <div id="example">
+        <br>
+        <select v-model="selected">
+            <!-- 对象字面量 -->
+            <option v-bind:value="{ number: 123 }">123</option>
+            <option v-bind:value="{ number: 456 }">456</option>
+            <option v-bind:value="{ number: 789 }">789</option>
+            <option v-bind:value="{ number: 'abc' }">abc</option>
+        </select>
+        <p>{{selected}}</p>
+        <br>
+        <pre>{{$data | json}}</pre>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                selected: ''
+            }
+        })
+    </script>
+</body>
+</html>
