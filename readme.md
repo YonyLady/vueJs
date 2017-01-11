@@ -1,3 +1,8 @@
+<style>
+    header{
+        font-size: 24px;
+    }
+</style>
 <h1>vuejs 2 目录</h1>
 <div>
     <section>
@@ -86,25 +91,69 @@
         </ol>
     </section>
     <section>
-        <a href='https://github.com/YonyLady/vueJs/tree/master/4-v-on'>事件处理 v-on</a>
+        <header><a href='https://github.com/YonyLady/vueJs/tree/master/4-v-on'>四、事件处理 v-on</a><header>
+        <ol>
+            <li>
+                <a href='https://github.com/YonyLady/vueJs/blob/master/4-v-on/v-on.html'>
+                    v-on 事件绑定 $event
+                </a>
+            </li>
+            <li>
+                <a href='https://github.com/YonyLady/vueJs/blob/master/4-v-on/v-on-modifier.html'>
+                    v-on 事件修饰符@keyup  @click.once
+                </a>
+            </li>
+        </ol>
     </section>
     <section>
-        <a href='https://github.com/YonyLady/vueJs/tree/master/5-component'>组件 component</a>
+        <header><a href='https://github.com/YonyLady/vueJs/tree/master/5-component'>五、组件 component</a></header>
     </section>
     <section>
-        <a href='https://github.com/YonyLady/vueJs/tree/master/6-form'>表单控件绑定 v-model</a>
+        <header><a href='https://github.com/YonyLady/vueJs/tree/master/6-form'>六、表单控件绑定 v-model</a></header>
+        <ol>
+            <li>
+                <a href='https://github.com/YonyLady/vueJs/blob/master/6-form/input-checkbox.html'>
+                    v-model checkbox用法
+                </a>
+            </li>
+            <li>
+                <a href='https://github.com/YonyLady/vueJs/blob/master/6-form/input-checkbox-trueValue.html'>
+                     checkbox 关于:true-value的用法
+                </a>
+            </li>
+            <li>
+                <a href='https://github.com/YonyLady/vueJs/blob/master/6-form/input-modifier.html'>
+                     表单控件修饰符 lazy number trim用法
+                </a>
+            </li>
+            <li>
+                <a href='https://github.com/YonyLady/vueJs/blob/master/6-form/input-radio.html'>
+                     v-model radio用法
+                </a>
+            </li>
+            <li>
+                <a href='https://github.com/YonyLady/vueJs/blob/master/6-form/select.html'>
+                     v-model select用法
+                </a>
+            </li>
+            <li>
+                <a href='https://github.com/YonyLady/vueJs/blob/master/6-form/select-bindValue.html'>
+                     select options 绑定value为对象
+                </a>
+            </li>
+        </ol>
     </section>
     <section>
-        <a href='https://github.com/YonyLady/vueJs/tree/master/7-transition'>过渡效果 transition</a>
+        <header><a href='https://github.com/YonyLady/vueJs/tree/master/7-transition'>七、过渡效果 transition</a></header>
     </section>
     <section>
-        <a href='https://github.com/YonyLady/vueJs/tree/master/8-filters'>过滤器 filters</a>
+        <header><a href='https://github.com/YonyLady/vueJs/tree/master/8-filters'>八、过滤器 filters</a></header>
     </section>
     <section>
-        <a href='https://github.com/YonyLady/vueJs/tree/master/9-computed'>计算属性 computed</a>
+        <header><a href='https://github.com/YonyLady/vueJs/tree/master/9-computed'>九、计算属性 computed</a></header>
     </section>
     <section>
-        <a href='https://github.com/YonyLady/vueJs/blob/master/10-watcher'>观察 watchers</a>
+        <header><a href='https://github.com/YonyLady/vueJs/blob/master/10-watcher'>十、观察 watchers</a></header>
     </section>
 </div>
 
