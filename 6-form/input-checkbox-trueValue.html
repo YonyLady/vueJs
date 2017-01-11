@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>checkbox value bindings </title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+    <header>
+        <h2 class="title">checkbox value bindings demo</h2>
+        <p class="note">v-bind 后面的双引号，是 js 表达式，不是字串。</p>
+    </header>
+    <div id="example">
+        <br>
+        <input type="checkbox" v-model="toggle" v-bind:true-value="a" v-bind:false-value="b">
+        <br>
+        <pre>你的选中项值为： {{ toggle }}</pre>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                toggle: '',
+                a: '选中',
+                b: '未选中'
+            }
+        })
+    </script>
+</body>
+</html>
