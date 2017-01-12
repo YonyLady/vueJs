@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>组件props传递数据2 </title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+    <div id="app1">
+        <!-- 传递了一个字符串 "1" -->
+        <comp some-prop="100"></comp>
+
+        <br >
+        <!-- 传递实际的数字  -->
+        <comp :some-prop="100"></comp>
+    </div>
+    <script>
+        Vue.config.debug = true;
+        Vue.component('comp', {
+            // camelCase in JavaScript
+            props: ['someProp'],
+            template: '<span>{{ someProp+199 }}</span>'
+        });
+        var vm = new Vue({
+            el: '#app1'
+        });
+    </script>
+</body>
+</html>

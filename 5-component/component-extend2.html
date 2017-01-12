@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>title </title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+<header>
+    <h2 class="title">组件的注册 vue.extend() 用法2</h2>
+    <p class="note">在extend()构造器中使用 components, 分别对指定的 tag，撰写或传入对象，来构造 组件</p>
+</header>
+<div id="app">
+    <h3>vm1</h3>
+    <my-component></my-component>
+    <br>
+    <my-components2></my-components2>
+</div>
+<script>
+    var MyComponent2 = Vue.extend({
+        template: '<div><h1>{{msg1}}</h1>',
+        data: function() {
+            return {
+                msg1: '组件2号'
+            }
+        }
+    });
+    // also works for local registration
+    // 本地注册，也可以这样子工作，注册语法糖，重点在这段
+    // 构造器中使用 components, 分别对指定的 tag，撰写或传入对象，来构造 组件。
+    var Parent = Vue.extend({
+        components: {
+            'my-component': {
+                template: '<div>在构造器中，使用 componens 注册组件</div>'
+            },
+            'my-components2': MyComponent2
+        }
+    });
+    // 创建一个 Parent 实例
+    var p = new Parent({
+        el: '#app',
+        data: {
+            firstName: 'Walter',
+            lastName: 'White',
+            alias: 'Heisenberg'
+        }
+    });
+    // 挂载到元素上
+    //p.$mount('#app1')
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>组件 template 标签使用</title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+    <header>
+        <h2 class="title">组件 template 标签使用</h2>
+        <p class="note">组件元素template 通过id 可以注册到vue()实例中,或者注入vue.component()组件中</p>
+    </header>
+
+
+    <template id="template1">
+        <div>
+            <h2>{{title}}</h2>
+            <label for="username">Name:</label>
+            <input id="username" v-model="user.name">
+            <label for="useremail">Email:</label>
+            <input id="useremail" v-model="user.email">
+            <button v-on:click="save">Submit</button>
+            {{isSubmit}}
+            <br> {{user.name}}
+            <br> {{user.email}}
+            <br>
+        </div>
+    </template>
+    <div id="app1">
+        <!--<child></child>-->
+    </div>
+
+
+    <script>
+//        Vue.component('child',{
+//            template: '#template1'
+//        });
+        var vm = new Vue({
+            el: '#app1',
+            template: "#template1",
+            data: function() {
+                return {
+                    title: 'template标签使用',
+                    user: {
+                        name: 'Yony',
+                        email: 'YonyLady@yahoo.com'
+                    },
+                    isSubmit: ''
+                }
+            },
+            methods: {
+                'save': function() {
+                    this.isSubmit = 'clicked'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

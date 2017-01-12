@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>组件 prop 计算属性 </title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+    <header>
+        <h2 class="title">组件 prop 计算属性</h2>
+        <p class="note">通过计算属性，props传递数据直接计算后输出</p>
+    </header>
+
+    <div id="app1">
+        <child :msg='parentMsg'></child>
+    </div>
+
+    <template id="my-template">
+        <span>{{ normalizedSize }}</span>
+    </template>
+
+    <script>
+        Vue.component('child', {
+            props: ['msg'],
+            template: '#my-template',
+            computed:{
+                normalizedSize: function () {
+                    return this.msg.trim().toLowerCase();
+                }
+            }
+        });
+        var vm = new Vue({
+            el: '#app1',
+            data: {
+                parentMsg: 'HELL VUE.JS!'
+            }
+        });
+    </script>
+</body>
+</html>

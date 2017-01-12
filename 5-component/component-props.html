@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <title>component of props 的用法 </title>
+    <title>component of props 传递数据 </title>
     <link type="text/css" rel="stylesheet" href="../base.css">
 </head>
 <body>
-    <div id="app">
-        <h5 class="title">字段props的用法</h5>
-        <my-component :my-message="parentMsg"></my-component>
+    <header>
+        <h2 class="title">component of props 的用法</h2>
         <p class="note">当使用非字符串模版时，prop的名字形式会从 camelCase 转为 kebab-case（短横线隔开）</p>
+        <p class="note">my-message="parentMsg!" parentMsg为一个data对象,当父组件数据发生变化时，会传给子组件</p>
+        <p class="note"> :my-message="hello!" </p>
+    </header>
+    <div id="app">
+        <my-component :my-message="parentMsg"></my-component>
+        <br>
+        <my-component my-message="hello!"></my-component>
     </div>
 
     <script>
@@ -18,9 +24,11 @@
             props:['myMessage'],
             template:'<span>{{ myMessage }}</span>'
         });
+
         new Vue({  
             el:'#app',
             data:{
+                msg:'title',
                 parentMsg: 'this is parentMsg component!'
             }
         });
