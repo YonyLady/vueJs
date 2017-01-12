@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>组件prop验证传递数据</title>
+    <link type="text/css" rel="stylesheet" href="../base.css">
+</head>
+<body>
+<br>
+<br>
+    <div id="app">
+        <my-component
+                :prop-a="number"
+                :prop-b="parentMsg"
+                :prop-d="number"
+                :prop-f="15"
+        ></my-component>
+    </div>
+
+    <template id="my-template" >
+        <!--<ul>-->
+            <!--<li v-for="item in parentUser"> {{ item.name }} </li>-->
+        <!--</ul>-->
+        <div>
+            <div>
+                <p class="note">null值： </p>
+                msg_null: {{ msg_null }}
+            </div>
+            <div>
+                <p class="note">propA必须为数字：</p>
+                propA: {{ propA +1}}
+            </div>
+            <div>
+                <p class="note">propB为字符串，有默认值，有required为非空验证：</p>
+                propB: {{ propB +1}}
+            </div>
+            <div>
+                <p class="note">数字，有默认值：</p>
+                propC: {{ propC +1}}
+            </div>
+            <div>
+                <P class="note">多种类型输出：</P>
+                propD: {{ propD + 1}}
+            </div>
+            <div>
+                <p class="note">对象的输出：</p>
+                propE: 用户名：{{propE.user.name}}
+            </div>
+            <div>
+                <p class="note">自定义验证，值必须大于10,如果小于10，控制台报错，但页面中任然可以显示</p>
+                propF: {{propF +1}}
+            </div>
+        </div>
+    </template>
+
+<script>
+    Vue.component('my-component',{
+        props:{
+            msg_null: null,
+            /**propA必须为数字,如果不是数字，控制台将报错，页面显示为字符串*/
+            propA: Number,
+            /**propB为字符串，有默认值，但required为非空验证，如果没有传值:prop-b=''，控制台会报错**/
+            propB: {
+                type: String,
+                default: 'message',
+                required: true
+            },
+            /**propC数字，有默认值**/
+            propC: {
+                type: Number,
+                default: 100
+            },
+            /**多种类型输出**/
+            propD:[String, Number],
+            /**对象/数组 由函数返回**/
+            propE:{
+                type: Object,
+                default: function () {
+                    return{
+                        user:{
+                            name: 'Yony',
+                            age: 18
+                        }
+                    }
+                }
+            },
+            /** 自定义验证函数**/
+            propF: {
+                validator: function (value) {
+                    return value > 10
+                }
+            }
+
+        },
+        template: '#my-template'
+    });
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            parentMsg: 'Yony Smith',
+            users:[
+                {name: 'Yony'},
+                {name: 'Asa'},
+                {name: 'Tome'},
+                {name: 'Lily'}
+            ],
+            number: 100
+        }
+    });
+</script>
+</body>
+</html>
