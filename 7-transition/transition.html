@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>过渡效果 transition标签</title>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
+    <style>
+        .box{
+            width: 300px;
+            background-color: #639799;
+            padding: 50px;
+        }
+    </style>
 </head>
 <body>
 <div id="example-3">
@@ -16,7 +23,7 @@
             enter-active-class="animated tada"
             leave-active-class="animated bounceOutRight"
     >
-        <p v-if="show">hello</p>
+        <p v-if="show" class="box">hello</p>
     </transition>
 </div>
 <script>
