@@ -1,8 +1,4 @@
-<style>
-    header{
-        font-size: 24px;
-    }
-</style>
+
 <h1>基本用法、构造器、属性、生命周期</h1>
 <div>
     <section>
