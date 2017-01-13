@@ -4,6 +4,9 @@
     }
 </style>
 <h1>vuejs 2 目录</h1>
+<ol>
+    <li><a href='https://github.com/YonyLady/vueJs/blob/master/1-base'>1、基本用法、构造器、属性、生命周期</a></li>
+</ol>
 <div>
     <section>
         <header><a href='https://github.com/YonyLady/vueJs/blob/master/1-base'>1、基本用法、构造器、属性、生命周期</a></header>
@@ -28,7 +31,7 @@
                     created实例生命周期
                 </a>
             </li>
-        </ul>
+        </ol>
     </section>
     <section>
         <header><a href='https://github.com/YonyLady/vueJs/blob/master/2-if'>2、条件渲染 v-if</a></header>
